@@ -6,7 +6,7 @@ public class Politico extends Persona{
         super();
     }
 
-    public Politico(String partido, String nombre, int edad, long id, long id_boleto, String departamento, double dinero) {
+    public Politico(String partido, String nombre, int edad, long id, String id_boleto, String departamento, double dinero) {
         super(nombre, edad, id, id_boleto, departamento, dinero);
         this.partido = partido;
     }

@@ -3,14 +3,14 @@ public class Persona {
     private String nombre;
     private int edad;
     private long id;
-    private long id_boleto;
+    private String id_boleto;
     private String departamento;
     private double dinero;
 
     public Persona() {
     }
 
-    public Persona(String nombre, int edad, long id, long id_boleto, String departamento, double dinero) {
+    public Persona(String nombre, int edad, long id, String id_boleto, String departamento, double dinero) {
         this.nombre = nombre;
         this.edad = edad;
         this.id = id;
@@ -43,11 +43,11 @@ public class Persona {
         this.id = id;
     }
 
-    public long getId_boleto() {
+    public String getId_boleto() {
         return id_boleto;
     }
 
-    public void setId_boleto(long id_boleto) {
+    public void setId_boleto(String id_boleto) {
         this.id_boleto = id_boleto;
     }
 

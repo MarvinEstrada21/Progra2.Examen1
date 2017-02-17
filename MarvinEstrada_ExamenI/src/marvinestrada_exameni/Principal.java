@@ -5,6 +5,8 @@
  */
 package marvinestrada_exameni;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Marvin F. Estrada
@@ -77,9 +79,19 @@ public class Principal extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         tf_dinero_politico = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cb_partido = new javax.swing.JComboBox<>();
         jButton4 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        jPanel8 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tb_empleado = new javax.swing.JTable();
+        jPanel9 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tb_estudiante = new javax.swing.JTable();
+        jPanel10 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tb_politico = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -105,15 +117,14 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel9.setText("Dinero Disponible:");
 
-        tf_dinero_empleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_dinero_empleadoActionPerformed(evt);
-            }
-        });
-
         jLabel10.setText("Empleo:");
 
         jButton2.setText("Agregar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -184,9 +195,9 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
                     .addComponent(tf_empleo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addComponent(jButton2)
-                .addGap(39, 39, 39))
+                .addGap(59, 59, 59))
         );
 
         jTabbedPane2.addTab("Empleado", jPanel5);
@@ -207,18 +218,12 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel16.setText("Dinero Disponible:");
 
-        tf_dinero_estudiante.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_dinero_estudianteActionPerformed(evt);
-            }
-        });
-
         jLabel23.setText("Carrera:");
 
         jButton3.setText("Agregar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
             }
         });
 
@@ -293,7 +298,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
                     .addComponent(tf_carrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                 .addComponent(jButton3)
                 .addGap(35, 35, 35))
         );
@@ -316,17 +321,16 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel22.setText("Dinero Disponible:");
 
-        tf_dinero_politico.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_dinero_politicoActionPerformed(evt);
-            }
-        });
-
         jLabel24.setText("Partido de Afiliación:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nacional", "Liberal", "Alianza", "PINU", "APH", "FAPER" }));
+        cb_partido.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nacional", "Liberal", "Alianza", "PINU", "APH", "FAPER" }));
 
         jButton4.setText("Agregar");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -361,7 +365,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel24)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(cb_partido, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(141, 141, 141))
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(257, 257, 257)
@@ -398,8 +402,8 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                    .addComponent(cb_partido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addComponent(jButton4)
                 .addGap(41, 41, 41))
         );
@@ -419,15 +423,102 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Agregar", jPanel1);
 
+        tb_empleado.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "ID"
+            }
+        ));
+        jScrollPane1.setViewportView(tb_empleado);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(89, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(210, Short.MAX_VALUE))
+        );
+
+        jTabbedPane3.addTab("Empleado", jPanel8);
+
+        tb_estudiante.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "ID"
+            }
+        ));
+        jScrollPane2.setViewportView(tb_estudiante);
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(89, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(210, Short.MAX_VALUE))
+        );
+
+        jTabbedPane3.addTab("Estudiante", jPanel9);
+
+        tb_politico.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "ID"
+            }
+        ));
+        jScrollPane3.setViewportView(tb_politico);
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(89, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(210, Short.MAX_VALUE))
+        );
+
+        jTabbedPane3.addTab("Politico", jPanel10);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 623, Short.MAX_VALUE)
+            .addComponent(jTabbedPane3)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+            .addComponent(jTabbedPane3, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         jTabbedPane1.addTab("Modificar", jPanel2);
@@ -440,7 +531,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+            .addGap(0, 477, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Eliminar", jPanel3);
@@ -453,7 +544,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+            .addGap(0, 477, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Reportes", jPanel4);
@@ -482,12 +573,6 @@ public class Principal extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
             }
         });
 
@@ -534,10 +619,6 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.jd_ingresar.setModal(true);
         this.jd_ingresar.pack();
@@ -545,21 +626,83 @@ public class Principal extends javax.swing.JFrame {
         this.jd_ingresar.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void tf_dinero_empleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_dinero_empleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_dinero_empleadoActionPerformed
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        String nombre, departamento, empleo, id_boleto;
+        int edad;
+        long id;
+        double dinero;
+        try {
+            nombre = tf_nombre_empleado.getText();
+            edad = Integer.parseInt(sp_edad_empleado.getValue().toString());
+            id = Long.parseLong(tf_id_empleado.getText());
+            id_boleto = tf_id_boleto_empleado.getText();
+            departamento = cb_depar_empleado.getSelectedItem().toString();
+            dinero = Double.parseDouble(tf_dinero_empleado.getText());
+            empleo = tf_empleo.getText();
+            JOptionPane.showMessageDialog(this, "El empleado ha sido agregado exitosamente");
+            tf_nombre_empleado.setText("");
+            sp_edad_empleado.setValue(18);
+            tf_id_empleado.setText("");
+            tf_id_boleto_empleado.setText("");
+            cb_depar_empleado.setSelectedIndex(0);
+            tf_dinero_empleado.setText("");
+            tf_empleo.setText("");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ha ocurrido un error y no se guardaron los datos");
+        }
+    }//GEN-LAST:event_jButton2MouseClicked
 
-    private void tf_dinero_estudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_dinero_estudianteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_dinero_estudianteActionPerformed
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        String nombre, departamento, carrera, id_boleto;
+        int edad;
+        long id;
+        double dinero;
+        try {
+            nombre = tf_nombre_estudiante.getText();
+            edad = Integer.parseInt(sp_edad_estudiante.getValue().toString());
+            id = Long.parseLong(tf_id_estudiante.getText());
+            id_boleto = tf_id_boleto_estudiante.getText();
+            departamento = cb_depar_estudiante.getSelectedItem().toString();
+            dinero = Double.parseDouble(tf_dinero_estudiante.getText());
+            carrera = tf_carrera.getText();
+            JOptionPane.showMessageDialog(this, "El estudiante ha sido agregado exitosamente");
+            tf_nombre_estudiante.setText("");
+            sp_edad_estudiante.setValue(18);
+            tf_id_estudiante.setText("");
+            tf_id_boleto_estudiante.setText("");
+            cb_depar_estudiante.setSelectedIndex(0);
+            tf_dinero_estudiante.setText("");
+            tf_carrera.setText("");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ha ocurrido un error y no se guardaron los datos");
+        }
+    }//GEN-LAST:event_jButton3MouseClicked
 
-    private void tf_dinero_politicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_dinero_politicoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_dinero_politicoActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        String nombre, departamento, partido, id_boleto;
+        int edad;
+        long id;
+        double dinero;
+        try {
+            nombre = tf_nombre_politico.getText();
+            edad = Integer.parseInt(sp_edad_politico.getValue().toString());
+            id = Long.parseLong(tf_id_politico.getText());
+            id_boleto = tf_id_boleto_politico.getText();
+            departamento = cb_depar_politico.getSelectedItem().toString();
+            dinero = Double.parseDouble(tf_dinero_politico.getText());
+            partido = cb_partido.getSelectedItem().toString();
+            JOptionPane.showMessageDialog(this, "El estudiante ha sido agregado exitosamente");
+            tf_nombre_politico.setText("");
+            sp_edad_politico.setValue(18);
+            tf_id_politico.setText("");
+            tf_id_boleto_politico.setText("");
+            cb_depar_politico.setSelectedIndex(0);
+            tf_dinero_politico.setText("");
+            cb_partido.setSelectedIndex(0);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ha ocurrido un error y no se guardaron los datos");
+        }
+    }//GEN-LAST:event_jButton4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -572,7 +715,7 @@ public class Principal extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -600,11 +743,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_depar_empleado;
     private javax.swing.JComboBox<String> cb_depar_estudiante;
     private javax.swing.JComboBox<String> cb_depar_politico;
+    private javax.swing.JComboBox<String> cb_partido;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -630,20 +773,30 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JDialog jd_ingresar;
     private javax.swing.JSpinner sp_edad_empleado;
     private javax.swing.JSpinner sp_edad_estudiante;
     private javax.swing.JSpinner sp_edad_politico;
+    private javax.swing.JTable tb_empleado;
+    private javax.swing.JTable tb_estudiante;
+    private javax.swing.JTable tb_politico;
     private javax.swing.JTextField tf_carrera;
     private javax.swing.JTextField tf_dinero_empleado;
     private javax.swing.JTextField tf_dinero_estudiante;

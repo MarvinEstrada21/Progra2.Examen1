@@ -6,7 +6,7 @@ public class Empleado extends Persona{
         super();
     }
 
-    public Empleado(String empleo, String nombre, int edad, long id, long id_boleto, String departamento, double dinero) {
+    public Empleado(String empleo, String nombre, int edad, long id, String id_boleto, String departamento, double dinero) {
         super(nombre, edad, id, id_boleto, departamento, dinero);
         this.empleo = empleo;
     }
